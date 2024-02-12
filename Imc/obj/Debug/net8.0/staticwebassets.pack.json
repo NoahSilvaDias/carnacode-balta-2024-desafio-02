@@ -21,6 +21,22 @@
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
+      "Id": "C:\\CarnaCode\\carnacode-balta-2024-desafio-02\\Imc\\wwwroot\\assets\\app.fig",
+      "PackagePath": "staticwebassets\\assets\\app.fig"
+    },
+    {
+      "Id": "C:\\CarnaCode\\carnacode-balta-2024-desafio-02\\Imc\\wwwroot\\assets\\icon-no-bg.png",
+      "PackagePath": "staticwebassets\\assets\\icon-no-bg.png"
+    },
+    {
+      "Id": "C:\\CarnaCode\\carnacode-balta-2024-desafio-02\\Imc\\wwwroot\\assets\\icon.png",
+      "PackagePath": "staticwebassets\\assets\\icon.png"
+    },
+    {
+      "Id": "C:\\CarnaCode\\carnacode-balta-2024-desafio-02\\Imc\\wwwroot\\assets\\texto-para-publicacao-nas-redes-sociais.txt",
+      "PackagePath": "staticwebassets\\assets\\texto-para-publicacao-nas-redes-sociais.txt"
+    },
+    {
       "Id": "C:\\CarnaCode\\carnacode-balta-2024-desafio-02\\Imc\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

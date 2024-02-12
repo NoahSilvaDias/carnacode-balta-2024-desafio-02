@@ -1,6 +1,22 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-q5GB5hJ\/lkg9cRVcmEeWaEYExyhEQNlSA6vyfb2FB6Y=",
+      "url": "assets\/app.fig"
+    },
+    {
+      "hash": "sha256-5hh3frNWVFQ5SbqZrM493\/EbiBJLXSkOaFLtJfGlhcc=",
+      "url": "assets\/icon-no-bg.png"
+    },
+    {
+      "hash": "sha256-CffrfLQgNgUWRiTiTiXOtbHGND1sI40lvThOwDddzCw=",
+      "url": "assets\/icon.png"
+    },
+    {
+      "hash": "sha256-1eAzZYwXnHau4sTHG38RYS9pxxQUITK36DsZ53s8WD0=",
+      "url": "assets\/texto-para-publicacao-nas-redes-sociais.txt"
+    },
+    {
       "hash": "sha256-JOZWd9XYwDyrwjSB0PVTcc602GisYED21qQUCSMlGtI=",
       "url": "css\/app.css"
     },
@@ -37,12 +53,12 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-7kboEul0a7+XerXDW3ZzkMRl5jVMNKTe0LBIFzqlW1o=",
-      "url": "Imc.styles.css"
-    },
-    {
       "hash": "sha256-rcIWTVNnYus6VWf2Z2U1g\/JzlC07Ym02cFjHtI59Xsc=",
       "url": "_framework\/blazor.webassembly.js"
+    },
+    {
+      "hash": "sha256-sm2mhS4wwQ1lCvSCan4XwcmPQOVF9MBz1xhp6ha3LKE=",
+      "url": "Imc.styles.css"
     },
     {
       "hash": "sha256-j29bzsbGr0GXbz3saSOBqDtWxNOK08Or3b1HgnZ+pvA=",
@@ -845,17 +861,17 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-wkmLMgG7j0reFMtOsNDhBdPeBx9FmQw9XQGhM+s5mRQ=",
+      "hash": "sha256-5aK59v72tpku9UP3di+YtrSIkxYA\/CktU3qda1LpPh4=",
       "url": "_framework\/Imc.wasm"
     },
     {
-      "hash": "sha256-MZ0WBAEahRQ8yBCVs6mtM3qwGc6ptZHjpeGByxsnuGg=",
+      "hash": "sha256-l+L5yPUgkm5O7S4PYL4awVhRyhjh9YAO1MEsEnOKfDs=",
       "url": "_framework\/Imc.pdb"
     },
     {
-      "hash": "sha256-cknC3uNHbOqgz6m0+Q+nMKRC6+nnVyGg1QNuQoqgTpg=",
+      "hash": "sha256-hLt3dUgAOkcQYKle7v0Od6c2KF3pkDI\/WwQ6eFkpp9c=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "DAqXjezn"
+  "version": "pWMQ+bDW"
 };
