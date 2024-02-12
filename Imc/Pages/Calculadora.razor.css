@@ -33,20 +33,20 @@
 
 .ageCaptcha-container {
     display: flex;
-    align-items: center;
-    padding: 15px 0;
     gap: 5px;
 }
 
 .button-request-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+    margin: 0 35px;
 }
 
 .button-request-container button {
     font-size: 115%;
-    width: 100%;
+    width: 150%;
     font-weight: 600;
     padding: 1%;
     border-radius: 25px;
@@ -61,4 +61,8 @@
 .btnUnderstand {
     background-color: #FFFFFF;
     border: 4px solid #45FEFE;
+}
+
+.resultPhrase {
+    word-wrap: break-word;
 }

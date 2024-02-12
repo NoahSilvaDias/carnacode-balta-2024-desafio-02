@@ -9,27 +9,51 @@
     <PageTitle>Calculadora</PageTitle>
 </head>
 <body>
-<div class="app-container">
-    <form action="">
+    <div class="app-container">
         <div class="title-container">
             <h1 class="title">Cálculo de IMC</h1>
         </div>
-        <div class="input-container">
-            <div class="imc-data-container">
-                <input class="inputHeight" type="text" placeholder="Altura"/>
-                <input class="inputWeight" type="text" placeholder="Peso"/>
-                <input class="inputSex" type="text" placeholder="Sexo"/>
-            </div>
+        <div class="imc-data-container">
+            <input class="inputHeight" @bind="@height" type="text" placeholder="Altura"/>
+            <input class="inputWeight" @bind="@weight" type="text" placeholder="Peso"/>
+            <input class="inputSex" @bind="@sex" type="text" placeholder="Sexo"/>
         </div>
         <div class="ageCaptcha-container">
             <input class="ageCaptcha" id="ageCaptcha" type="checkbox">
             <label for="ageCaptcha">Eu tenho 65 anos ou mais</label>
         </div>
         <div class="button-request-container">
-            <a href="history"><button class="btnCalculate" type="submit">Calcular meu IMC</button></a>
+            <button class="btnCalculate" onclick="@CalculaIMC">Calcular meu IMC</button>
             <button class="btnUnderstand" type="submit">Entenda o cálculo</button>
         </div>
-    </form>
-</div>
+        
+        @* <Result TitleText="@resultTitlePhrase" DescriptionText="@resultDescriptionPhrase"/> *@
+    </div>
 </body>
 </html>
+
+@code
+{
+    public double height { get; set; }
+    public double weight { get; set; }
+    public string? sex { get; set; }
+    public double resultCalcule { get; set; }
+    public string? resultTitlePhrase { get; set; }
+    public string? resultDescriptionPhrase { get; set; }
+
+    public void CalculaIMC()
+    {
+        resultCalcule = Math.Round(weight / (height * height), 2);
+        
+        if (resultCalcule >= 18.5 && resultCalcule < 25)
+        {
+            resultTitlePhrase = "\u2705Parabéns!";
+            resultDescriptionPhrase = "Você está no peso ideal, continue mantendo este estilo!";
+        }
+        if (resultCalcule >= 25 && resultCalcule < 30)
+        {
+            resultTitlePhrase = "Sobrepeso \u26d4\ufe0f";
+            resultDescriptionPhrase = "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal!";
+        }
+    }
+}
