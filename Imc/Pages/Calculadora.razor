@@ -1,4 +1,6 @@
-﻿@page "/calculadora"
+﻿@using System
+@page "/calculadora"
+@inject NavigationManager NavigationManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,26 +12,29 @@
 </head>
 <body>
 <div class="app-container">
-    <div class="title-container">
-        <h1 class="title">Cálculo de IMC</h1>
-    </div>
-    <div class="imc-data-container">
-        <input class="inputHeight" @bind-value="@height" type="text" placeholder="Altura"/>
-        <input class="inputWeight" @bind-value="@weight" type="text" placeholder="Peso"/>
-        <input class="inputSex" @bind-value="@sex" type="text" placeholder="Sexo"/>
-    </div>
-    <div class="ageCaptcha-container">
-        <input class="ageCaptcha" id="ageCaptcha" type="checkbox">
-        <label for="ageCaptcha">Eu tenho 65 anos ou mais</label>
-    </div>
-    <div class="button-request-container">
-        <button class="btnCalculate" onclick="@CalculaIMC">Calcular meu IMC</button>
-        <button class="btnUnderstand" type="submit">Entenda o cálculo</button>
-    </div>
     @if (modalVisible)
     {
-        <div class="app-container">
-            <Result IsVisible="@modalVisible" onclickCloseModal="@Close" TitleText="@resultTitlePhrase" DescriptionText="@resultDescriptionPhrase" />
+        <Result IsVisible="@modalVisible" onclickCloseModal="@Close" TitleText="@resultTitlePhrase" DescriptionText="@resultDescriptionPhrase" />
+    }
+    else
+    {
+        <div class="title-container">
+            <h1 class="title">Cálculo de IMC</h1>
+        </div>
+        <div class="imc-data-container">
+            <input class="inputHeight" @bind="@height" type="number" placeholder="Altura"/>
+            <input class="inputWeight" @bind="@weight" type="number" placeholder="Peso"/>
+            <input class="inputSex" @bind="@sex" type="text" placeholder="Sexo"/>
+        </div>
+        <div class="ageCaptcha-container">
+            <input class="ageCaptcha" id="ageCaptcha" type="checkbox">
+            <label for="ageCaptcha">Eu tenho 65 anos ou mais</label>
+        </div>
+        <div class="button-request-container">
+            <button class="btnCalculate" onclick="@CalculaIMC">Calcular meu IMC</button>
+            <a href="https://vidasaudavel.einstein.br/calcular-o-seu-imc/" target="_blank">
+                <button class="btnUnderstand" type="submit">Entenda o cálculo</button>
+            </a>
         </div>
     }
 </div>
@@ -39,8 +44,10 @@
 @code
 {
     bool modalVisible = false;
-    public double height { get; set; }
-    public double weight { get; set; }
+    private string height = "";
+    private string weight = "";
+    private double HeightAsDouble => string.IsNullOrEmpty(height) ? 0.0 : double.Parse(height);
+    private double WeightAsDouble => string.IsNullOrEmpty(weight) ? 0.0 : double.Parse(weight);
     public string sex { get; set; } = "";
     public double resultCalcule { get; set; }
     public string? resultTitlePhrase { get; set; }
@@ -51,9 +58,23 @@
         modalVisible = false;
     }
 
+    private void EmptyField()
+    {
+        height = string.Empty;
+        weight = string.Empty;
+    }
+
+    public void rato()
+    {
+        if ( string.IsNullOrEmpty(height))
+        {
+
+        }
+    }
+
     public void CalculaIMC()
     {
-        resultCalcule = Math.Round(weight / (height * height), 2);
+        resultCalcule = Math.Round(WeightAsDouble / (HeightAsDouble * HeightAsDouble), 2);
         if (resultCalcule < 18.5)
         {
             resultTitlePhrase = "\u26d4\ufe0fMagreza!";
@@ -75,5 +96,6 @@
             resultDescriptionPhrase = "Obesidade! Procure assistência médica!";
         }
         modalVisible = true;
+        EmptyField();
     }
 }

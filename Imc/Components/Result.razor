@@ -20,7 +20,7 @@
     </div>
     <div class="button-request-container">
         <button class="btnCalculate" type="submit">Registrar Medidas</button>
-        <button class="btnHistory" type="submit">Ver meu histórico</button>
+        <button class="btnHistory" type="submit" onclick="@NavigateToHistory">Ver meu histórico</button>
         <button class="btnCloseModal" type="submit" onclick="@Close">Fechar</button>
     </div>
 </div>
@@ -33,15 +33,15 @@
     [Parameter] public string? TitleText { get; set; } = "\u2705Parabéns!";
     [Parameter] public string? DescriptionText { get; set; } = "Você está no peso ideal, continue<br>mantendo este estilo!";
     [Parameter] public bool IsVisible { get; set; }
-    
-    private void CloseModal()
-    {
-        IsVisible = false;
-		NavigationManager.NavigateTo("/calculadora");
-    }
 
 	private void Close()
 	{	
     	onclickCloseModal.InvokeAsync();
+		NavigationManager.NavigateTo("/calculadora");
 	}
+
+    private void NavigateToHistory()
+    {
+        NavigationManager.NavigateTo("/history");
+    }
 }

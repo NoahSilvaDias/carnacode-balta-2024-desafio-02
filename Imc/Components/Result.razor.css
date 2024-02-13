@@ -24,20 +24,19 @@
 .title-container {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
     align-items: center;
-    padding: 20px 0;
+    padding: 1rem 0;
 }
 
 .title-container h1 {
     color: #FFF;
-    font-size: 30px;
+    font-size: 250%;
     font-weight: 500;
 }
 
 .title-container h3 {
     color: #FFF;
-    font-size: 20px;
+    font-size: 100%;
     text-align-last: center;
 }
 
