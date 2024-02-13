@@ -3,10 +3,11 @@
 }
 
 .app-container {
+    top: 10%;
+    left: 47%;
     display: flex;
-    padding: 70px;
+    padding: 40px;
     flex-direction: column;
-    align-items: center;
     background-color: #2E1462;
     border-radius: 20px;
 }
@@ -49,9 +50,7 @@
 }
 
 .button-request-container button {
-    width: 15vw;
-    min-width: 15vw;
-    max-width: 15vw;
+    width: 100%;
     padding: 10px 0;
     border-radius: 25px;
     border: 0 solid;

@@ -9,42 +9,56 @@
     <PageTitle>Calculadora</PageTitle>
 </head>
 <body>
-    <div class="app-container">
-        <div class="title-container">
-            <h1 class="title">Cálculo de IMC</h1>
-        </div>
-        <div class="imc-data-container">
-            <input class="inputHeight" @bind="@height" type="text" placeholder="Altura"/>
-            <input class="inputWeight" @bind="@weight" type="text" placeholder="Peso"/>
-            <input class="inputSex" @bind="@sex" type="text" placeholder="Sexo"/>
-        </div>
-        <div class="ageCaptcha-container">
-            <input class="ageCaptcha" id="ageCaptcha" type="checkbox">
-            <label for="ageCaptcha">Eu tenho 65 anos ou mais</label>
-        </div>
-        <div class="button-request-container">
-            <button class="btnCalculate" onclick="@CalculaIMC">Calcular meu IMC</button>
-            <button class="btnUnderstand" type="submit">Entenda o cálculo</button>
-        </div>
-        
-        @* <Result TitleText="@resultTitlePhrase" DescriptionText="@resultDescriptionPhrase"/> *@
+<div class="app-container">
+    <div class="title-container">
+        <h1 class="title">Cálculo de IMC</h1>
     </div>
+    <div class="imc-data-container">
+        <input class="inputHeight" @bind-value="@height" type="text" placeholder="Altura"/>
+        <input class="inputWeight" @bind-value="@weight" type="text" placeholder="Peso"/>
+        <input class="inputSex" @bind-value="@sex" type="text" placeholder="Sexo"/>
+    </div>
+    <div class="ageCaptcha-container">
+        <input class="ageCaptcha" id="ageCaptcha" type="checkbox">
+        <label for="ageCaptcha">Eu tenho 65 anos ou mais</label>
+    </div>
+    <div class="button-request-container">
+        <button class="btnCalculate" onclick="@CalculaIMC">Calcular meu IMC</button>
+        <button class="btnUnderstand" type="submit">Entenda o cálculo</button>
+    </div>
+    @if (modalVisible)
+    {
+        <div class="app-container">
+            <Result IsVisible="@modalVisible" onclickCloseModal="@Close" TitleText="@resultTitlePhrase" DescriptionText="@resultDescriptionPhrase" />
+        </div>
+    }
+</div>
 </body>
 </html>
 
 @code
 {
+    bool modalVisible = false;
     public double height { get; set; }
     public double weight { get; set; }
-    public string? sex { get; set; }
+    public string sex { get; set; } = "";
     public double resultCalcule { get; set; }
     public string? resultTitlePhrase { get; set; }
     public string? resultDescriptionPhrase { get; set; }
+    
+    private void Close()
+    {
+        modalVisible = false;
+    }
 
     public void CalculaIMC()
     {
         resultCalcule = Math.Round(weight / (height * height), 2);
-        
+        if (resultCalcule < 18.5)
+        {
+            resultTitlePhrase = "\u26d4\ufe0fMagreza!";
+            resultDescriptionPhrase = "Magreza! Procure assistência médica!";
+        }
         if (resultCalcule >= 18.5 && resultCalcule < 25)
         {
             resultTitlePhrase = "\u2705Parabéns!";
@@ -55,5 +69,11 @@
             resultTitlePhrase = "Sobrepeso \u26d4\ufe0f";
             resultDescriptionPhrase = "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal!";
         }
+        if (resultCalcule > 30)
+        {
+            resultTitlePhrase = "Obesidade \u26d4\ufe0f";
+            resultDescriptionPhrase = "Obesidade! Procure assistência médica!";
+        }
+        modalVisible = true;
     }
 }
