@@ -1,3 +1,67 @@
+/* /Components/Result.razor.rz.scp.css */
+html[b-r9hlxtnqex], body[b-r9hlxtnqex] {
+    font-family: "Inter", serif;
+}
+
+.app-container[b-r9hlxtnqex] {
+    top: 10%;
+    left: 47%;
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    background-color: #2E1462;
+    border-radius: 20px;
+}
+
+.logo[b-r9hlxtnqex] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border: 5px solid #45FEFE;
+    border-radius: 30px;
+}
+
+.title-container[b-r9hlxtnqex] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.title-container h1[b-r9hlxtnqex] {
+    color: #FFF;
+    font-size: 250%;
+    font-weight: 500;
+}
+
+.title-container h3[b-r9hlxtnqex] {
+    color: #FFF;
+    font-size: 100%;
+    text-align-last: center;
+}
+
+.button-request-container[b-r9hlxtnqex] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.button-request-container button[b-r9hlxtnqex] {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 25px;
+    border: 0 solid;
+    background-color: #45FEFE;
+}
+
+.button-request-container .btnHistory[b-r9hlxtnqex] {
+    padding: 7px 0;
+    border: 3px solid #45FEFE;
+    background-color: #FFF;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-j6tei9dcxl] {
     position: relative;

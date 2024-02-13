@@ -1036,3 +1036,4 @@ C:\CarnaCode\carnacode-balta-2024-desafio-02\Imc\obj\Debug\net8.0\Imc.pdb
 C:\CarnaCode\carnacode-balta-2024-desafio-02\Imc\obj\Debug\net8.0\ref\Imc.dll
 C:\CarnaCode\carnacode-balta-2024-desafio-02\Imc\obj\Debug\net8.0\scopedcss\Pages\History.razor.rz.scp.css
 C:\CarnaCode\carnacode-balta-2024-desafio-02\Imc\obj\Debug\net8.0\scopedcss\Pages\Calculadora.razor.rz.scp.css
+C:\CarnaCode\carnacode-balta-2024-desafio-02\Imc\obj\Debug\net8.0\scopedcss\Components\Result.razor.rz.scp.css
